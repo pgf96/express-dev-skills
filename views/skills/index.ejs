@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>index</title>
 </head>
 
 <body>
-    <h1>skills</h1>
-    <ul>
-        <% skills.forEach(function(skill) { %>
-            <li>
-                <%= skill.skill %>
-                    -
-                    <%= skill.proficient %>
-            </li>
-            <% }); %>
-    </ul>
+    <div>
+        <h1>skills</h1>
+        <ul>
+            <% skills.forEach(function(skill) { %>
+                <li>
+                    <a href="/skills/<%= skill.id %>">
+                        <%= skill.skill %>
+                    </a>
+                </li>
+                <% }); %>
+        </ul>
+        <form action="skills/new">
+            <button type="submit">add new skill</button>
+        </form>
+
+    </div>
 </body>
 
 </html>
